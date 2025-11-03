@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { canvasDots } from "../utils/Utils";
 const Hero = () => {
