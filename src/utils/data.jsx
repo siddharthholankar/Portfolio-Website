@@ -119,7 +119,16 @@ const experiences = [
     title: "Financial Analyst",
     company: "Citi Group",
     date: "Feb 2025 – Present",
+    duration: "Present",
     location: "USA",
+    logo: "🏦", // Can be replaced with actual logo URL
+    type: "Full-time",
+    techStack: ["Excel", "SQL", "Python", "Power BI", "Tableau", "SAP FICO"],
+    keyMetrics: [
+      { label: "Risk Models", value: "50K+ segments" },
+      { label: "Dashboards", value: "10+ built" },
+      { label: "Reports", value: "Bi-weekly + Quarterly" }
+    ],
     points: [
       "Analyzed key lending trends, borrower risk behavior, and capital market impacts on interest rate spreads using Excel, SQL, and Python to identify repayment delay patterns and default risks across customer segments.",
       "Built Power BI and Tableau dashboards to highlight regional credit performance, market yield curve movements, and loan-to-value shifts, supporting strategic updates to risk scoring and profitability models.",
@@ -132,7 +141,16 @@ const experiences = [
     title: "Financial Analyst",
     company: "Streebo Inc",
     date: "Dec 2020 – July 2024",
+    duration: "3.5 years",
     location: "India",
+    logo: "💼", // Can be replaced with actual logo URL
+    type: "Full-time",
+    techStack: ["Excel", "SQL", "Power BI", "Python", "Tableau", "Salesforce"],
+    keyMetrics: [
+      { label: "Cost Savings", value: "$2M+" },
+      { label: "Forecast Accuracy", value: "+35%" },
+      { label: "Reporting Time", value: "-70%" }
+    ],
     points: [
       "Evaluated revenue and cost structures across digital banking deployments using advanced Excel, SQL, and Power BI to identify cost-saving opportunities and maximize gross margins.",
       "Built financial models and ROI reports that supported pricing decisions for chatbot and mobile app features, integrating forecasting tools with Google Sheets for collaborative planning.",
