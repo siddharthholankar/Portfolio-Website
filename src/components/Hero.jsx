@@ -52,7 +52,7 @@ const Hero = () => {
                 Contact Me
               </button>
               <a
-              href="https://drive.google.com/file/d/1fTGzJgQ77a6zilJBxfYiotSDgl3lxDtv/view?usp=sharing"
+              href="https://drive.google.com/file/d/1hRssQrhvvfjdmq6efz7YwgYIxj-qPmcH/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors duration-300"

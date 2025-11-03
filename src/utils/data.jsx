@@ -171,37 +171,37 @@ const achievements = [
   {
     number: "4+",
     label: "Years Experience",
-    description: "Financial Analysis & Modeling",
+    description: "Driving financial strategies across banking, fintech, and consulting sectors with expertise in risk analysis, forecasting, and P&L optimization",
     icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
   },
   {
     number: "$2M+",
-    label: "Cost Savings",
-    description: "Identified through optimization",
+    label: "Cost Savings Identified",
+    description: "Analyzed digital banking deployments using advanced Excel, SQL, and Power BI to identify cost-saving opportunities by optimizing cloud infrastructure (AWS), streamlining operational workflows, and eliminating redundant processes through variance analysis",
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
   },
   {
     number: "50+",
-    label: "Reports Delivered",
-    description: "To Fortune 500 clients",
+    label: "Financial Reports",
+    description: "Created analytical reports for JP Morgan, BlackRock, Goldman Sachs, and Barclays providing investment insights, financial projections, and strategic recommendations for venture-backed companies",
     icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
   },
   {
     number: "70%",
     label: "Time Reduction",
-    description: "In reporting processes",
+    description: "Automated financial reporting workflows using Excel VBA macros, Python scripts, and Power BI integrations, reducing manual data entry errors and enabling real-time MIS tracking for faster executive decisions",
     icon: "M13 10V3L4 14h7v7l9-11h-7z"
   },
   {
     number: "100%",
-    label: "Compliance",
-    description: "GAAP & SOX standards",
+    label: "Compliance Record",
+    description: "Maintained full compliance with GAAP accounting standards and SOX regulatory frameworks while delivering bi-weekly performance insights and quarterly executive summaries using SAP FICO and Oracle Financials",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
   },
   {
     number: "4.0",
-    label: "GPA",
-    description: "Master's in Business Analytics",
+    label: "Perfect GPA",
+    description: "Master's in Business Analytics from Arizona State University (Aug 2024 - May 2025), specializing in financial modeling, predictive analytics, and data-driven decision making",
     icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
   }
 ];
