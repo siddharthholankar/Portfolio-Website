@@ -45,11 +45,11 @@ const WorkExperience = ({ experiences }) => {
               💼 Career Journey
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             Professional <span className="bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text">Experience</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6"></div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
             4+ years of driving financial strategies and delivering measurable business impact
           </p>
         </div>
@@ -131,11 +131,11 @@ const WorkExperience = ({ experiences }) => {
 
                         {/* Key Metrics */}
                         {exp.keyMetrics && (
-                          <div className="grid grid-cols-3 gap-3 mb-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                             {exp.keyMetrics.map((metric, idx) => (
                               <div key={idx} className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-lg p-3 text-center">
-                                <div className="text-lg md:text-xl font-bold text-blue-400">{metric.value}</div>
-                                <div className="text-xs text-gray-400">{metric.label}</div>
+                                <div className="text-base sm:text-lg md:text-xl font-bold text-blue-400 whitespace-nowrap">{metric.value}</div>
+                                <div className="text-xs text-gray-400 whitespace-nowrap">{metric.label}</div>
                               </div>
                             ))}
                           </div>
