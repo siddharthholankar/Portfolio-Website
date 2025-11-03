@@ -66,11 +66,12 @@ const Contact = () => {
       return;
     }
 
-    // Prepare template parameters
+    // Prepare template parameters - must match EmailJS template exactly
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
       to_name: "Siddharth Holankar",
+      reply_to: formData.email,
       message: `Subject: ${formData.subject}\n\n${formData.message}`,
     };
 
@@ -78,8 +79,9 @@ const Contact = () => {
 
     // Send email using EmailJS
     emailjs.send(serviceId, templateId, templateParams, publicKey).then(
-      () => {
+      (response) => {
         toast.dismiss();
+        console.log("EmailJS Success:", response);
         toast.success("Your message has been sent successfully! 🎉");
         setFormData({
           name: "",
@@ -90,10 +92,18 @@ const Contact = () => {
       },
       (error) => {
         toast.dismiss();
-        console.error("EmailJS Error:", error);
+        console.error("EmailJS Error Details:", error);
+        console.error("Error Text:", error.text);
+        console.error("Error Status:", error.status);
+        
+        // Show specific error message
+        if (error.text) {
+          toast.error(`EmailJS Error: ${error.text}. Opening email client...`);
+        } else {
+          toast.error("EmailJS failed. Opening your email client instead...");
+        }
         
         // Fallback to mailto on error
-        toast.error("EmailJS failed. Opening your email client instead...");
         const mailtoLink = `mailto:siddharthholankar08@gmail.com?subject=${encodeURIComponent(
           formData.subject
         )}&body=${encodeURIComponent(
@@ -102,7 +112,7 @@ const Contact = () => {
         
         setTimeout(() => {
           window.location.href = mailtoLink;
-        }, 1500);
+        }, 2000);
       }
     );
   };
