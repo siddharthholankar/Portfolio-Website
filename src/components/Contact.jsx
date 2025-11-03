@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
@@ -38,28 +39,72 @@ const Contact = () => {
       return;
     }
 
-    // Create mailto link with form data
-    const mailtoLink = `mailto:siddharthholankar08@gmail.com?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
+    // Get EmailJS credentials from environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    // Open email client
-    window.location.href = mailtoLink;
+    // Check if credentials are configured
+    if (!serviceId || !templateId || !publicKey) {
+      // Fallback to mailto if EmailJS not configured
+      const mailtoLink = `mailto:siddharthholankar08@gmail.com?subject=${encodeURIComponent(
+        formData.subject
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+      window.location.href = mailtoLink;
+      toast.success("Opening your email client...");
+      
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }, 1000);
+      return;
+    }
 
-    // Show success message
-    toast.success("Opening your email client...");
+    // Prepare template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      to_name: "Siddharth Holankar",
+      message: `Subject: ${formData.subject}\n\n${formData.message}`,
+    };
 
-    // Clear form
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    }, 1000);
+    toast.loading("Sending message...");
+
+    // Send email using EmailJS
+    emailjs.send(serviceId, templateId, templateParams, publicKey).then(
+      () => {
+        toast.dismiss();
+        toast.success("Your message has been sent successfully! 🎉");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      },
+      (error) => {
+        toast.dismiss();
+        console.error("EmailJS Error:", error);
+        
+        // Fallback to mailto on error
+        toast.error("EmailJS failed. Opening your email client instead...");
+        const mailtoLink = `mailto:siddharthholankar08@gmail.com?subject=${encodeURIComponent(
+          formData.subject
+        )}&body=${encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        )}`;
+        
+        setTimeout(() => {
+          window.location.href = mailtoLink;
+        }, 1500);
+      }
+    );
   };
 
   return (
