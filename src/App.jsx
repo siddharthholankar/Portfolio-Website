@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import About from "./components/About";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import FinancialDashboard from "./components/FinancialDashboard";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import WorkExperience from "./components/WorkExperience";
@@ -56,6 +57,7 @@ function App() {
       <Navbar />
       <About skills={skills} />
       <Achievements achievements={achievements} />
+      <FinancialDashboard />
       <Projects projects={projects} />
       <Skills visibleSkills={visibleSkills} hiddenSkills={hiddenSkills} />
       <WorkExperience experiences={experiences} />
