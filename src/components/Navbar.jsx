@@ -55,6 +55,12 @@ const Navbar = () => {
                 Work Experience
               </a>
               <a
+                href="#education"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+              >
+                Education
+              </a>
+              <a
                 href="#contact"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
               >
@@ -119,6 +125,18 @@ const Navbar = () => {
               className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Skills
+            </a>
+            <a
+              href="#experience"
+              className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Work Experience
+            </a>
+            <a
+              href="#education"
+              className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Education
             </a>
             <a
               href="#contact"

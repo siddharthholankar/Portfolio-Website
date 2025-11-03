@@ -91,13 +91,13 @@ const Contact = () => {
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
             <a
-              href="mailto:sholanka@asu.edu"
+              href="mailto:siddharthholankar08@gmail.com"
               className="text-gray-300 hover:text-white transition-colors duration-300"
             >
               <FaEnvelope size={24} />
             </a>
             <a
-              href="https://www.linkedin.com/in/sholankar/"
+              href="https://linkedin.com/in/siddharthhol/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors duration-300"

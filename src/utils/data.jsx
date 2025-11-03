@@ -56,94 +56,111 @@ const projects = [
 ];
 const visibleSkills = [
   {
-    category: "Data Analytics & Visualization",
+    category: "Financial Analysis & Modeling",
     icon: "M4 6h16M4 12h16m-7 6h7",
     skills: [
-      { name: "Tableau", level: 95 },
-      { name: "Power BI", level: 80 },
-      { name: "Excel", level: 85 },
+      { name: "Financial Modeling (DCF, CCA)", level: 95 },
+      { name: "Budgeting & Forecasting", level: 90 },
+      { name: "Variance Analysis", level: 90 },
     ],
   },
   {
-    category: "Big Data Technologies",
+    category: "Business Intelligence & Dashboards",
     icon: "M3 18h18M9 21h6M4 15h16M12 3v12m-6 3a6 6 0 0112 0",
     skills: [
-      { name: "Apache Spark", level: 95 },
-      { name: "Hadoop", level: 85 },
-      { name: "Google BigQuery", level: 90 },
+      { name: "Power BI", level: 95 },
+      { name: "Tableau", level: 90 },
+      { name: "Excel (VBA, Macros)", level: 95 },
     ],
   },
   {
-    category: "Languages",
+    category: "Data Analytics & Programming",
     icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
     skills: [
-      { name: "Python", level: 90 },
-      { name: "R", level: 95 }
+      { name: "Python (Pandas, NumPy)", level: 90 },
+      { name: "SQL", level: 95 },
+      { name: "R", level: 85 }
     ],
   },
 ];
 
 const hiddenSkills = [
   {
-    category: "Databases & ETL",
+    category: "Accounting & ERP Systems",
     icon: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4",
     skills: [
-      { name: "MySQL", level: 95 },
-      { name: "MongoDB", level: 85 },
-      { name: "AWS Redshift & Snowflake", level: 80 },
-      { name: "ETL Pipelines (Airflow, SSIS)", level: 75 },
+      { name: "SAP FICO", level: 85 },
+      { name: "Oracle Financials", level: 80 },
+      { name: "QuickBooks & NetSuite", level: 85 },
+      { name: "GAAP & IFRS Standards", level: 90 },
     ],
   },
   {
-    category: "Tools & Others",
+    category: "Database & Cloud Platforms",
     icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
     skills: [
-      { name: "Git", level: 90 },
-      { name: "Docker", level: 80 },
-      { name: "Kubernetes", level: 60 },
-      { name: "Jenkins", level: 90 },
-      { name: "AWS", level: 85 },
+      { name: "Snowflake & BigQuery", level: 85 },
+      { name: "AWS", level: 80 },
+      { name: "Azure", level: 75 },
+      { name: "Salesforce CRM", level: 85 },
     ],
   },
 ];
 
 const experiences = [
   {
-    title: "Business Analyst Intern",
-    company: "DHL Supply Chain",
-    date: "January 2025 – Present",
-    location: "Tempe, Arizona",
+    title: "Financial Analyst",
+    company: "Citi Group",
+    date: "Feb 2025 – Present",
+    location: "USA",
     points: [
-      "Analyzed logistics data to streamline out-of-office-hours (OOH) network operations, enhancing emergency delivery efficiency and reducing average response time by 30% during critical periods.",
-      "Built dashboards using Power BI and Tableau to monitor shipment performance in real-time.",
-      "Implemented geocoding algorithms combined with machine learning techniques to systematically fill in missing dataset values, leading to a 30% improvement in overall data accuracy.",
-      "Developed predictive models to enhance warehouse and courier allocation, reducing delays and optimizing logistics operations."
+      "Analyzed key lending trends, borrower risk behavior, and capital market impacts on interest rate spreads using Excel, SQL, and Python to identify repayment delay patterns and default risks across customer segments.",
+      "Built Power BI and Tableau dashboards to highlight regional credit performance, market yield curve movements, and loan-to-value shifts, supporting strategic updates to risk scoring and profitability models.",
+      "Collaborated with product, risk, and capital markets teams to perform financial modeling, forecasting disbursement volume, NIM, delinquency metrics, and interest rate exposure while applying budgeting and scenario analysis principles.",
+      "Delivered bi-weekly performance insights and quarterly executive summaries, aligning results with GAAP standards and SOX compliance frameworks using tools like SAP FICO and Oracle Financials.",
+      "Supported regression-based risk profiling by automating data pipelines and dashboards, enabling faster lending decisions and optimizing credit policies in real time using Python and advanced Excel."
     ],
   },
   {
-    title: "Data Research Analyst",
-    company: "Morningstar (PitchBook)",
-    date: "December 2022 – July 2024",
-    location: "Mumbai, India",
+    title: "Financial Analyst",
+    company: "Streebo Inc",
+    date: "Dec 2020 – July 2024",
+    location: "India",
     points: [
-      "Tracked and analyzed data for over 3,500 early-stage companies, identifying key trends in investment patterns that informed strategy adjustments.",
-      "Created 50+ analytical reports for major investment banks such as JP Morgan, BlackRock, Goldman Sachs, and Barclays, providing valuable investment insights.",
-      "Conducted thorough analyses of 2000+ venture-backed companies, synthesizing data to produce accurate financial projections for strategic investment decisions.",
-      "Defined ETL processes to automate daily reporting workflows using SQL and Power BI, reducing reporting time by 25% and improving data pipeline efficiency."
-    ],
-  },
-  {
-    title: "Business Intelligence Analyst",
-    company: "FUEL (Friends Union for Energizing Lives)",
-    date: "December 2021 – November 2022",
-    location: "Pune, India",
-    points: [
-      "Engineered data pipelines and optimized ETL processes using SQL, reducing data retrieval time by 60% and improving forecasting accuracy.",
-      "Automated reporting processes using advanced Excel techniques, reducing report generation time by 30% and enabling faster decision-making.",
-      "Collaborated with high-profile clients, including HDFC Bank, Capgemini, Citi, Government of India, DBS, and Standard Chartered, to design and deliver tailored dashboards.",
-      "Highlighted the impact of Corporate Social Responsibility (CSR) activities executed by Fuel for Nation, enhancing clients’ strategic decision-making."
+      "Evaluated revenue and cost structures across digital banking deployments using advanced Excel, SQL, and Power BI to identify cost-saving opportunities and maximize gross margins.",
+      "Built financial models and ROI reports that supported pricing decisions for chatbot and mobile app features, integrating forecasting tools with Google Sheets for collaborative planning.",
+      "Analyzed project budgets versus actual spend using variance analysis and advised DevOps on AWS cost control strategies to streamline cloud usage without disrupting service delivery.",
+      "Designed interactive dashboards in Power BI to monitor module-level profitability and licensing performance across client segments, enabling better KPI-based leadership decisions.",
+      "Pulled sales pipeline data from Salesforce using SQL and created scoring models to predict deal closures, improving forecast accuracy and helping marketing teams prioritize regions.",
+      "Conducted sensitivity analysis and identified pricing gaps across regions using Tableau and Python, offering actionable insights to reshape product strategy for retail and mid-size clients.",
+      "Collaborated with finance and product teams to automate reporting workflows, enabling real-time MIS tracking and reducing manual data errors with integrated Excel VBA macros."
     ],
   }
 ];
 
-export { skills, projects, visibleSkills, hiddenSkills, experiences };
+const education = [
+  {
+    degree: "Master's in Business Analytics",
+    institution: "Arizona State University",
+    date: "Aug 2024 — May 2025",
+    location: "Arizona, USA",
+    gpa: "4.0/4.0",
+  },
+  {
+    degree: "Bachelor's in International Business",
+    institution: "MIT World Peace University",
+    date: "Jun 2019 — Apr 2022",
+    location: "Pune, India",
+    gpa: "9.1/10",
+  }
+];
+
+const certifications = [
+  {
+    name: "Lean Six Sigma Green Belt",
+    issuer: "Arizona State University",
+    date: "2024",
+  }
+];
+
+export { skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications };

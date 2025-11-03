@@ -28,10 +28,10 @@ const Hero = () => {
               </h1>
             </div>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              Business Analyst
+              Financial Analyst
             </p>
             <p className="text-gray-400 mb-8">
-            Optimizing business decisions with data-driven insights.
+              Driving data-backed financial strategies through in-depth modeling, forecasting, and variance analysis.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
               <button

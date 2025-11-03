@@ -62,7 +62,7 @@ const About = ({ skills }) => {
                 isVisible ? "animate-slide-in-left" : "opacity-0"
               } font-poppins`}
             >
-              I’m a Business Analytics professional and Data Analyst passionate about turning data into actionable insights. Skilled in Python, SQL, Tableau, Power BI, and machine learning, I thrive at the intersection of data, technology, and strategy. My experience spans logistics optimization, financial research, and business intelligence, where I’ve streamlined operations and built predictive models to enhance efficiency.
+              Experienced Financial Analyst with 4+ years of experience driving data-backed financial strategies through in-depth modeling, forecasting, and variance analysis across fast-paced financial environments. Skilled in leveraging tools like Excel, Python, SQL, and Power BI to deliver actionable insights, optimize budgets, and support regulatory compliance. Adept at cross-functional collaboration, building financial dashboards, and presenting KPIs to support strategic planning and executive decision-making. Proven ability to align financial performance with business goals while ensuring accuracy, transparency, and stakeholder confidence.
             </p>
           </div>
 
