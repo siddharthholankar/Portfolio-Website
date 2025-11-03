@@ -27,12 +27,23 @@ const Hero = () => {
                 <span className="text-cyan-400">Siddharth Holankar</span>
               </h1>
             </div>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8">
+            <p className="text-xl md:text-2xl text-gray-300 mb-4">
               Financial Analyst
             </p>
-            <p className="text-gray-400 mb-8">
+            <p className="text-gray-400 mb-6 max-w-2xl">
               Driving data-backed financial strategies through in-depth modeling, forecasting, and variance analysis.
             </p>
+            <div className="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
+              <span className="bg-cyan-500/10 text-cyan-400 px-4 py-2 rounded-full text-sm font-medium border border-cyan-500/30">
+                4+ Years Experience
+              </span>
+              <span className="bg-cyan-500/10 text-cyan-400 px-4 py-2 rounded-full text-sm font-medium border border-cyan-500/30">
+                $2M+ Cost Savings
+              </span>
+              <span className="bg-cyan-500/10 text-cyan-400 px-4 py-2 rounded-full text-sm font-medium border border-cyan-500/30">
+                50+ Reports Delivered
+              </span>
+            </div>
             <div className="flex gap-4 justify-center md:justify-start">
               <button
                 onClick={() => handleScroll("contact")}

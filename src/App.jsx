@@ -6,6 +6,8 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import WorkExperience from "./components/WorkExperience";
 import Education from "./components/Education";
+import Achievements from "./components/Achievements";
+import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import { canvasDotsBg } from "./utils/Utils";
 import {
@@ -16,6 +18,8 @@ import {
   experiences,
   education,
   certifications,
+  achievements,
+  testimonials,
 } from "./utils/data";
 import Footer from "./components/Footer";
 
@@ -51,10 +55,12 @@ function App() {
       </div>
       <Navbar />
       <About skills={skills} />
+      <Achievements achievements={achievements} />
       <Projects projects={projects} />
       <Skills visibleSkills={visibleSkills} hiddenSkills={hiddenSkills} />
       <WorkExperience experiences={experiences} />
       <Education education={education} certifications={certifications} />
+      <Testimonials testimonials={testimonials} />
       <Contact />
       <Footer/>
       {showScrollButton && (

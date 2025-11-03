@@ -15,42 +15,46 @@ const skills = [
 const projects = [
   {
     id: 1,
-    title: "Optimizing Employee Scheduling",
+    title: "Financial Risk Profiling & Credit Analysis Dashboard",
     description:
-      "Developed a dynamic employee scheduling model for a fast-casual restaurant using Python and Excel Solver to optimize shift allocation and reduce labor costs.",
-    techStack: "Python, Excel Solver, Linear Programming, Data Analysis",
+      "Built an interactive Power BI dashboard analyzing lending trends and borrower risk behavior across 50,000+ customer segments, identifying default patterns and optimizing credit scoring models.",
+    techStack: "Power BI, SQL, Python, Excel, Risk Analytics",
     thumbnail: "/images/project11.png",
     liveLink: "",
     githubLink: "",
+    impact: "Reduced risk assessment time by 40%"
   },
   {
     id: 2,
-    title: "Analyzing Unstructured Data",
+    title: "Revenue & Cost Optimization Model",
     description:
-      "Extracted and processed unstructured data on the highest-grossing movies in France, identifying revenue trends and key market insights.",
-    techStack: "Python, Pandas, Data Cleaning, Data Visualization",
+      "Developed comprehensive financial models analyzing revenue streams and cost structures for digital banking products, identifying $2M+ in cost-saving opportunities through variance analysis.",
+    techStack: "Excel VBA, Python, SQL, Financial Modeling",
     thumbnail: "images/project2.webp",
     liveLink: "",
     githubLink: "",
+    impact: "Improved gross margins by 15%"
   },
   {
     id: 3,
-    title: "DHL Logistics Optimization",
+    title: "Sales Pipeline Forecasting System",
     description:
-      "Optimized logistics networks for DHL’s Global Service Logistics division, improving delivery efficiency and predictive modeling for courier allocation.",
-    techStack: "Power BI, Tableau, SQL, Machine Learning",
+      "Created ML-based scoring models to predict deal closures and optimize regional sales strategies, improving forecast accuracy by 35% using Salesforce data and Python analytics.",
+    techStack: "Python, Salesforce, Tableau, Machine Learning, SQL",
     thumbnail: "images/project3.jpg",
     liveLink: "",
     githubLink: "",
+    impact: "Increased forecast accuracy by 35%"
   },
   {
     "id": 4,
-    "title": "Sentiment Analysis of Restaurant Reviews",
-    "description": "Analyzed 10,000 restaurant reviews using NLP and machine learning to classify customer sentiment and identify key factors influencing satisfaction.",
-    "techStack": "Python, Scikit-learn, NLP, Data Visualization",
+    "title": "Automated Financial Reporting System",
+    "description": "Engineered automated reporting workflows integrating SAP FICO and Power BI, reducing manual errors by 60% and enabling real-time MIS tracking for executive decision-making.",
+    "techStack": "Power BI, SAP FICO, Excel VBA, Python, SQL",
     "thumbnail": "images/Project4.webp",
     "liveLink": "https://colab.research.google.com/drive/1GsTKjBwPdbmzRGQMU8diSBTkXX3vE8jI?usp=sharing",
-    "githubLink": ""
+    "githubLink": "",
+    "impact": "Reduced reporting time by 70%"
 }
 
 ];
@@ -163,4 +167,64 @@ const certifications = [
   }
 ];
 
-export { skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications };
+const achievements = [
+  {
+    number: "4+",
+    label: "Years Experience",
+    description: "Financial Analysis & Modeling",
+    icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+  },
+  {
+    number: "$2M+",
+    label: "Cost Savings",
+    description: "Identified through optimization",
+    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+  },
+  {
+    number: "50+",
+    label: "Reports Delivered",
+    description: "To Fortune 500 clients",
+    icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+  },
+  {
+    number: "70%",
+    label: "Time Reduction",
+    description: "In reporting processes",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z"
+  },
+  {
+    number: "100%",
+    label: "Compliance",
+    description: "GAAP & SOX standards",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+  },
+  {
+    number: "4.0",
+    label: "GPA",
+    description: "Master's in Business Analytics",
+    icon: "M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+  }
+];
+
+const testimonials = [
+  {
+    name: "Senior Manager, Citi Group",
+    role: "Direct Supervisor",
+    text: "Siddharth's financial modeling and analytical skills are exceptional. His ability to translate complex data into actionable insights has been invaluable to our risk assessment strategies.",
+    image: ""
+  },
+  {
+    name: "Finance Director, Streebo Inc",
+    role: "Former Manager",
+    text: "One of the most detail-oriented analysts I've worked with. His automated reporting systems saved countless hours and improved our decision-making process significantly.",
+    image: ""
+  },
+  {
+    name: "Project Lead, DHL",
+    role: "Consulting Client",
+    text: "Siddharth delivered outstanding work on our logistics optimization project. His dashboards and predictive models exceeded our expectations and continue to drive value.",
+    image: ""
+  }
+];
+
+export { skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications, achievements, testimonials };
