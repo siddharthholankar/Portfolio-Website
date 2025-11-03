@@ -96,23 +96,20 @@ const Contact = () => {
         console.error("Error Text:", error.text);
         console.error("Error Status:", error.status);
         
-        // Show specific error message
-        if (error.text) {
-          toast.error(`EmailJS Error: ${error.text}. Opening email client...`);
+        // Show specific error message based on error type
+        if (error.text && error.text.includes("Invalid grant")) {
+          toast.error("Gmail connection expired. Please contact the site owner.", {
+            duration: 5000,
+          });
+        } else if (error.text) {
+          toast.error(`Failed to send: ${error.text}`, {
+            duration: 5000,
+          });
         } else {
-          toast.error("EmailJS failed. Opening your email client instead...");
+          toast.error("Failed to send message. Please try again later.", {
+            duration: 5000,
+          });
         }
-        
-        // Fallback to mailto on error
-        const mailtoLink = `mailto:siddharthholankar08@gmail.com?subject=${encodeURIComponent(
-          formData.subject
-        )}&body=${encodeURIComponent(
-          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-        )}`;
-        
-        setTimeout(() => {
-          window.location.href = mailtoLink;
-        }, 2000);
       }
     );
   };
