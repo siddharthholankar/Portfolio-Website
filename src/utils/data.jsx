@@ -22,7 +22,8 @@ const projects = [
     thumbnail: "/images/project11.png",
     liveLink: "",
     githubLink: "",
-    impact: "Reduced risk assessment time by 40%"
+    impact: "Reduced risk assessment time by 40%",
+    category: "Dashboard"
   },
   {
     id: 2,
@@ -33,7 +34,8 @@ const projects = [
     thumbnail: "images/project2.webp",
     liveLink: "",
     githubLink: "",
-    impact: "Improved gross margins by 15%"
+    impact: "Improved gross margins by 15%",
+    category: "Finance"
   },
   {
     id: 3,
@@ -44,19 +46,20 @@ const projects = [
     thumbnail: "images/project3.jpg",
     liveLink: "",
     githubLink: "",
-    impact: "Increased forecast accuracy by 35%"
+    impact: "Increased forecast accuracy by 35%",
+    category: "ML"
   },
   {
-    "id": 4,
-    "title": "Automated Financial Reporting System",
-    "description": "Engineered automated reporting workflows integrating SAP FICO and Power BI, reducing manual errors by 60% and enabling real-time MIS tracking for executive decision-making.",
-    "techStack": "Power BI, SAP FICO, Excel VBA, Python, SQL",
-    "thumbnail": "images/Project4.webp",
-    "liveLink": "https://colab.research.google.com/drive/1GsTKjBwPdbmzRGQMU8diSBTkXX3vE8jI?usp=sharing",
-    "githubLink": "",
-    "impact": "Reduced reporting time by 70%"
-}
-
+    id: 4,
+    title: "Automated Financial Reporting System",
+    description: "Engineered automated reporting workflows integrating SAP FICO and Power BI, reducing manual errors by 60% and enabling real-time MIS tracking for executive decision-making.",
+    techStack: "Power BI, SAP FICO, Excel VBA, Python, SQL",
+    thumbnail: "images/Project4.webp",
+    liveLink: "https://colab.research.google.com/drive/1GsTKjBwPdbmzRGQMU8diSBTkXX3vE8jI?usp=sharing",
+    githubLink: "",
+    impact: "Reduced reporting time by 70%",
+    category: "Dashboard"
+  }
 ];
 const visibleSkills = [
   {
