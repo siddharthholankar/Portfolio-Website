@@ -1,7 +1,6 @@
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -39,33 +38,28 @@ const Contact = () => {
       return;
     }
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      to_name: "Siddharth Holankar",
-      message: formData.subject + ":" + formData.message,
-    };
-    toast.loading("Sending message...");
+    // Create mailto link with form data
+    const mailtoLink = `mailto:siddharthholankar08@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
 
-    emailjs.send(serviceId, templateId, templateParams, publicKey).then(
-      () => {
-        toast.dismiss();
-        toast.success("Your message has been sent successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-      },
-      (error) => {
-        toast.dismiss();
-        toast.error("Failed to send message. Please try again later.");
-      }
-    );
+    // Open email client
+    window.location.href = mailtoLink;
+
+    // Show success message
+    toast.success("Opening your email client...");
+
+    // Clear form
+    setTimeout(() => {
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    }, 1000);
   };
 
   return (
