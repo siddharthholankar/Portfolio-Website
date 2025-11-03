@@ -62,6 +62,7 @@ function App() {
       </div>
       <Navbar />
       <About skills={skills} />
+      <WorkExperience experiences={experiences} />
       <ImpactMetrics />
       <Achievements achievements={achievements} />
       <FinancialDashboard />
@@ -69,7 +70,6 @@ function App() {
       <Projects projects={projects} />
       <TechStack />
       <Skills visibleSkills={visibleSkills} hiddenSkills={hiddenSkills} />
-      <WorkExperience experiences={experiences} />
       <Education education={education} certifications={certifications} />
       <CurrentlyLearning />
       <Testimonials testimonials={testimonials} />
