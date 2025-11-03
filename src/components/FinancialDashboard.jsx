@@ -140,7 +140,7 @@ const FinancialDashboard = () => {
           </h2>
           <div className="w-20 h-1 bg-cyan-500 mx-auto mb-4"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Interactive visualization of key financial metrics and performance indicators
+            Sample dashboard showcasing my financial analysis capabilities - built using React & Recharts to demonstrate the type of interactive dashboards I create with Power BI, Tableau, and Excel in my professional work
           </p>
         </div>
 
@@ -388,9 +388,37 @@ const FinancialDashboard = () => {
           )}
         </div>
 
-        {/* Bottom Note */}
-        <div className="mt-8 text-center">
-          <p className="text-gray-400 text-sm">
+        {/* Bottom Notes */}
+        <div className="mt-8 space-y-4">
+          <div className="bg-neutral-900 border border-cyan-500/30 rounded-lg p-6">
+            <div className="flex items-start space-x-3">
+              <svg
+                className="w-6 h-6 text-cyan-500 flex-shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <div>
+                <h4 className="text-white font-semibold mb-2">About This Dashboard</h4>
+                <p className="text-gray-400 text-sm">
+                  This is a demonstration dashboard I built to showcase my technical skills in creating interactive financial visualizations. 
+                  The charts and metrics represent the <strong className="text-cyan-400">type of analysis I perform professionally</strong> - including 
+                  revenue forecasting, cost optimization, profitability tracking, and KPI monitoring. While the specific data shown here is 
+                  illustrative, the analysis methods, dashboard design, and metrics align with my actual work at <strong className="text-cyan-400">Citi Group</strong> and 
+                  <strong className="text-cyan-400"> Streebo Inc</strong>, where I built similar dashboards using Power BI, Tableau, and Excel that helped 
+                  identify $2M+ in cost savings and improve forecast accuracy by 35%.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p className="text-gray-400 text-sm text-center">
             💡 All charts are interactive - hover over data points for detailed information
           </p>
         </div>

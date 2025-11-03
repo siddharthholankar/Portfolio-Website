@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import About from "./components/About";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Achievements from "./components/Achievements";
 import FinancialDashboard from "./components/FinancialDashboard";
+import CaseStudy from "./components/CaseStudy";
 import Projects from "./components/Projects";
+import TechStack from "./components/TechStack";
 import Skills from "./components/Skills";
 import WorkExperience from "./components/WorkExperience";
 import Education from "./components/Education";
-import Achievements from "./components/Achievements";
+import CurrentlyLearning from "./components/CurrentlyLearning";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import { canvasDotsBg } from "./utils/Utils";
@@ -58,10 +61,13 @@ function App() {
       <About skills={skills} />
       <Achievements achievements={achievements} />
       <FinancialDashboard />
+      <CaseStudy />
       <Projects projects={projects} />
+      <TechStack />
       <Skills visibleSkills={visibleSkills} hiddenSkills={hiddenSkills} />
       <WorkExperience experiences={experiences} />
       <Education education={education} certifications={certifications} />
+      <CurrentlyLearning />
       <Testimonials testimonials={testimonials} />
       <Contact />
       <Footer/>
