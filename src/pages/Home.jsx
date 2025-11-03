@@ -12,6 +12,7 @@ import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
 import Education from "../components/Education";
 import CurrentlyLearning from "../components/CurrentlyLearning";
+import HireMe from "../components/HireMe";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import { canvasDotsBg } from "../utils/Utils";
@@ -58,6 +59,7 @@ const Home = ({ skills, projects, visibleSkills, hiddenSkills, experiences, educ
       <Education education={education} certifications={certifications} />
       <CurrentlyLearning />
       {/* <Testimonials testimonials={testimonials} /> */}
+      <HireMe />
       <Contact />
       <Footer/>
       {showScrollButton && (

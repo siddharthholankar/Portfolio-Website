@@ -72,6 +72,12 @@ const Navbar = () => {
                 Blog
               </Link>
               <a
+                href="#hire-me"
+                className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-md text-sm font-semibold transition-all duration-300 hover:from-blue-700 hover:to-cyan-700 hover:shadow-lg hover:shadow-blue-500/50 whitespace-nowrap"
+              >
+                Hire Me
+              </a>
+              <a
                 href="#contact"
                 className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap"
               >
@@ -157,6 +163,12 @@ const Navbar = () => {
             >
               Blog
             </Link>
+            <a
+              href="#hire-me"
+              className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white block px-3 py-2 rounded-md text-base font-semibold"
+            >
+              Hire Me
+            </a>
             <a
               href="#contact"
               className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"

@@ -131,11 +131,11 @@ const WorkExperience = ({ experiences }) => {
 
                         {/* Key Metrics */}
                         {exp.keyMetrics && (
-                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+                          <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-4">
                             {exp.keyMetrics.map((metric, idx) => (
-                              <div key={idx} className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-lg p-3 text-center">
-                                <div className="text-base sm:text-lg md:text-xl font-bold text-blue-400 whitespace-nowrap">{metric.value}</div>
-                                <div className="text-xs text-gray-400 whitespace-nowrap">{metric.label}</div>
+                              <div key={idx} className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-lg p-2 sm:p-3 text-center">
+                                <div className="text-sm sm:text-lg md:text-xl font-bold text-blue-400 break-words">{metric.value}</div>
+                                <div className="text-[10px] sm:text-xs text-gray-400 break-words leading-tight">{metric.label}</div>
                               </div>
                             ))}
                           </div>
