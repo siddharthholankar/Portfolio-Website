@@ -1,21 +1,8 @@
-import { useState, useEffect } from "react";
-import MarketStatusBar from "./components/MarketStatusBar";
-import About from "./components/About";
-import Hero from "./components/Hero";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import ImpactMetrics from "./components/ImpactMetrics";
-import Achievements from "./components/Achievements";
-import FinancialDashboard from "./components/FinancialDashboard";
-import CaseStudy from "./components/CaseStudy";
-import Projects from "./components/Projects";
-import TechStack from "./components/TechStack";
-import Skills from "./components/Skills";
-import WorkExperience from "./components/WorkExperience";
-import Education from "./components/Education";
-import CurrentlyLearning from "./components/CurrentlyLearning";
-import Testimonials from "./components/Testimonials";
-import Contact from "./components/Contact";
-import { canvasDotsBg } from "./utils/Utils";
+import Home from "./pages/Home";
+import Blog from "./components/Blog";
+import BlogPost from "./components/BlogPost";
 import {
   skills,
   projects,
@@ -25,66 +12,50 @@ import {
   education,
   certifications,
   achievements,
-  testimonials,
+  blogPosts,
 } from "./utils/data";
-import Footer from "./components/Footer";
 
-function App() {
-  const [showScrollButton, setShowScrollButton] = useState(false);
-
-  useEffect(() => {
-    canvasDotsBg();
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowScrollButton(true);
-      } else {
-        setShowScrollButton(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+function AppContent() {
+  const location = useLocation();
+  const isBlogPage = location.pathname.startsWith('/blog');
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0f172a]">
-      <MarketStatusBar />
-      <Hero />
-      <div className="fixed top-0 left-0 w-full h-screen pointer-events-none">
-        <canvas className="canvas-2"></canvas>
-      </div>
-      <Navbar />
-      <About skills={skills} />
-      <WorkExperience experiences={experiences} />
-      <ImpactMetrics />
-      <Achievements achievements={achievements} />
-      <FinancialDashboard />
-      <CaseStudy />
-      <Projects projects={projects} />
-      <TechStack />
-      <Skills visibleSkills={visibleSkills} hiddenSkills={hiddenSkills} />
-      <Education education={education} certifications={certifications} />
-      <CurrentlyLearning />
-      <Testimonials testimonials={testimonials} />
-      <Contact />
-      <Footer/>
-      {showScrollButton && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center text-xl"
-          aria-label="Scroll to top"
-        >
-          ↑
-        </button>
-      )}
-    </div>
+    <>
+      {!isBlogPage && <Navbar />}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              skills={skills}
+              projects={projects}
+              visibleSkills={visibleSkills}
+              hiddenSkills={hiddenSkills}
+              experiences={experiences}
+              education={education}
+              certifications={certifications}
+              achievements={achievements}
+            />
+          }
+        />
+        <Route
+          path="/blog"
+          element={<Blog posts={blogPosts} />}
+        />
+        <Route
+          path="/blog/:slug"
+          element={<BlogPost posts={blogPosts} />}
+        />
+      </Routes>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

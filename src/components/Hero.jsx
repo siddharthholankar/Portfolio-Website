@@ -40,37 +40,102 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Enhanced Animated Background with Vibrant Gradients */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-cyan-600/20 to-purple-600/20 animate-gradient-shift"></div>
+      </div>
+
+      {/* Scanline Effect - Professional Data Terminal Feel */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent animate-scan"></div>
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
+          backgroundImage: 'repeating-linear-gradient(0deg, rgba(6, 182, 212, 0.03) 0px, transparent 1px, transparent 2px, rgba(6, 182, 212, 0.03) 3px)',
+          backgroundSize: '100% 4px'
         }}></div>
       </div>
 
-      {/* Financial Chart Background */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Animated Background Grid */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px',
+          animation: 'gridPulse 3s ease-in-out infinite'
+        }}></div>
+      </div>
+
+      {/* Enhanced Financial Chart Background with Glow */}
+      <div className="absolute inset-0 opacity-20">
         <svg className="w-full h-full" viewBox="0 0 1000 400" preserveAspectRatio="none">
           <defs>
             <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.5" />
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.4" />
               <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
             </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
           </defs>
+          {/* Chart Fill */}
           <path
             d="M0,300 L100,280 L200,220 L300,240 L400,180 L500,150 L600,170 L700,120 L800,140 L900,100 L1000,80 L1000,400 L0,400 Z"
             fill="url(#chartGradient)"
             className="animate-pulse"
           />
+          {/* Main Chart Line with Enhanced Glow */}
           <path
             d="M0,300 L100,280 L200,220 L300,240 L400,180 L500,150 L600,170 L700,120 L800,140 L900,100 L1000,80"
             fill="none"
+            stroke="#06b6d4"
+            strokeWidth="3"
+            opacity="0.9"
+            filter="url(#glow)"
+            className="animate-pulse"
+          />
+          {/* Secondary Chart Line */}
+          <path
+            d="M0,350 L100,330 L200,280 L300,300 L400,250 L500,220 L600,240 L700,190 L800,210 L900,170 L1000,150"
+            fill="none"
             stroke="#3b82f6"
             strokeWidth="2"
-            opacity="0.5"
+            opacity="0.6"
+            filter="url(#glow)"
+            className="animate-pulse"
+            style={{ animationDelay: '1s' }}
           />
         </svg>
+      </div>
+
+      {/* Floating Financial Metrics - Animated Numbers & Percentages */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[
+          { value: '+12.5%', color: 'text-green-400', x: '10%', y: '15%', delay: '0s' },
+          { value: '$2.4M', color: 'text-cyan-400', x: '85%', y: '20%', delay: '0.5s' },
+          { value: '↑ 23.8%', color: 'text-emerald-400', x: '15%', y: '70%', delay: '1s' },
+          { value: '€1.8M', color: 'text-blue-400', x: '80%', y: '65%', delay: '1.5s' },
+          { value: '+8.2%', color: 'text-green-300', x: '25%', y: '40%', delay: '2s' },
+          { value: '¥340M', color: 'text-purple-400', x: '70%', y: '45%', delay: '2.5s' },
+          { value: 'ROI: 31%', color: 'text-cyan-300', x: '5%', y: '85%', delay: '3s' },
+          { value: '$890K', color: 'text-blue-300', x: '90%', y: '80%', delay: '3.5s' },
+        ].map((metric, i) => (
+          <div
+            key={i}
+            className={`absolute ${metric.color} font-bold text-sm opacity-30 animate-float-metric`}
+            style={{
+              left: metric.x,
+              top: metric.y,
+              animationDelay: metric.delay,
+              animationDuration: '8s',
+            }}
+          >
+            {metric.value}
+          </div>
+        ))}
       </div>
 
       {/* Floating Financial Particles */}

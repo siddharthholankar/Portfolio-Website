@@ -236,3 +236,81 @@ body {
 .animate-shimmer {
   animation: shimmer 2s infinite;
 }
+
+/* Enhanced Hero Background Animations */
+
+/* Vibrant Gradient Shift Animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.animate-gradient-shift {
+  background-size: 300% 300%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Scanline Effect - Professional Data Terminal */
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scan {
+  animation: scan 4s linear infinite;
+}
+
+/* Grid Pulse Animation */
+@keyframes gridPulse {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* Floating Financial Metrics Animation */
+@keyframes float-metric {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translateY(-60px) translateX(15px);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-80px) translateX(0px);
+    opacity: 0;
+  }
+}
+
+.animate-float-metric {
+  animation: float-metric 8s ease-in-out infinite;
+}

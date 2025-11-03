@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+
 const Navbar = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const navbarRef = useRef(null);
   useEffect(() => {
@@ -23,52 +26,54 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-center space-x-6">
               <a
                 href="#"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap"
               >
                 Home
               </a>
               <a
                 href="#about"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap"
               >
                 About
               </a>
               <a
-                href="#dashboard"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                href="#experience"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap"
               >
-                Dashboard
+                Work Experience
               </a>
               <a
                 href="#projects"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap"
               >
                 Projects
               </a>
               <a
                 href="#skills"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap"
               >
                 Skills
               </a>
               <a
-                href="#experience"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-              >
-                Work Experience
-              </a>
-              <a
                 href="#education"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap"
               >
                 Education
               </a>
+              <Link
+                to="/blog"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap"
+              >
+                Blog
+              </Link>
               <a
                 href="#contact"
-                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 whitespace-nowrap"
               >
                 Contact
               </a>
@@ -121,10 +126,10 @@ const Navbar = () => {
               About
             </a>
             <a
-              href="#dashboard"
+              href="#experience"
               className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Dashboard
+              Work Experience
             </a>
             <a
               href="#projects"
@@ -139,17 +144,19 @@ const Navbar = () => {
               Skills
             </a>
             <a
-              href="#experience"
-              className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Work Experience
-            </a>
-            <a
               href="#education"
               className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Education
             </a>
+            <Link
+              to="/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Blog
+            </Link>
             <a
               href="#contact"
               className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"

@@ -248,4 +248,168 @@ const testimonials = [
   }
 ];
 
-export { skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications, achievements, testimonials };
+// Blog Posts / Financial Analysis
+const blogPosts = [
+  {
+    title: "Building Predictive Credit Risk Models: A Python & SQL Approach for Modern Financial Analysts",
+    slug: "predictive-credit-risk-models-python-sql",
+    excerpt: "Learn how to build production-ready credit risk models using Python, SQL, and machine learning. A step-by-step guide from data extraction to business insights with real-world examples from Citi Group analysis.",
+    content: `
+      <h2>Introduction</h2>
+      <p>For years, credit risk assessment relied on manual spreadsheets, gut instinct, and historical trends. Today's financial institutions can't afford that luxury.</p>
+      <p>At Citi Group, I recently analyzed lending trends across thousands of borrowers to identify repayment delay patterns and default risks. What struck me wasn't just the volume of data—it was how quickly insights could surface when you combine Python, SQL, and strategic thinking.</p>
+      <p>If you're a financial analyst still working primarily in Excel, this post is for you. I'm walking you through exactly how to build a predictive credit risk model that transforms raw transaction data into actionable lending decisions.</p>
+
+      <h2>Why Python for Credit Risk?</h2>
+      <p>Let's be honest: Excel is great. But when you're analyzing millions of loan records, tracking behavioral patterns, and running scenario analysis, Excel becomes a bottleneck.</p>
+      <p>Here's what Python brought to my Citi analysis:</p>
+      <ul>
+        <li><strong>Speed</strong>: Processing 50,000+ borrower records in seconds instead of minutes</li>
+        <li><strong>Scalability</strong>: Automating data pipelines that would require hours of manual work</li>
+        <li><strong>Accuracy</strong>: Eliminating formula errors through reproducible code</li>
+        <li><strong>Storytelling</strong>: Creating visualizations that executives actually understand</li>
+      </ul>
+      <p>Python isn't replacing your financial skills—it's amplifying them.</p>
+
+      <h2>The Architecture: Data to Decision</h2>
+      <p>Here's the workflow I use:</p>
+      <ol>
+        <li><strong>Extract data from SQL</strong> (borrower financials, payment history)</li>
+        <li><strong>Transform with Python</strong> (Pandas for data cleaning, feature engineering)</li>
+        <li><strong>Model with Python</strong> (scikit-learn for predictive models)</li>
+        <li><strong>Visualize with Power BI</strong> (dashboards for stakeholders)</li>
+        <li><strong>Action</strong> (updated risk scoring, policy adjustments)</li>
+      </ol>
+
+      <h2>Step 1: Pulling Data from SQL</h2>
+      <p>You need clean, complete data. Here's how I structure the SQL query:</p>
+      <pre><code>SELECT
+    borrower_id,
+    loan_amount,
+    interest_rate,
+    loan_term_months,
+    monthly_payment,
+    total_payments_made,
+    days_past_due,
+    employment_tenure_years,
+    annual_income,
+    credit_score,
+    number_of_active_loans,
+    payment_history_30_days,
+    payment_history_60_days,
+    payment_history_90_days,
+    default_flag,
+    created_date
+FROM loans
+WHERE created_date >= DATE_SUB(CURDATE(), INTERVAL 24 MONTH)
+    AND loan_status IN ('ACTIVE', 'CLOSED', 'DEFAULT')
+ORDER BY borrower_id;</code></pre>
+      <p><strong>Why this matters</strong>: The features you select determine model accuracy. I included employment tenure and payment history because they're strong predictors of default risk—not just because they're available.</p>
+
+      <h2>Step 2: Data Transformation with Pandas</h2>
+      <p>Once you have the data, Python cleans it:</p>
+      <pre><code>import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+
+# Load data
+df = pd.read_csv('loan_data.csv')
+
+# Handle missing values
+df['employment_tenure_years'].fillna(df['employment_tenure_years'].median(), inplace=True)
+df['credit_score'].fillna(df['credit_score'].mean(), inplace=True)
+
+# Create new features
+df['payment_ratio'] = df['total_payments_made'] / df['loan_amount']
+df['delinquency_rate'] = (df['payment_history_30_days'] +
+                          df['payment_history_60_days'] +
+                          df['payment_history_90_days']) / df['loan_term_months']
+df['loan_to_income'] = df['loan_amount'] / df['annual_income']
+df['debt_service_ratio'] = (df['monthly_payment'] * 12) / df['annual_income']</code></pre>
+      <p><strong>Feature engineering</strong> is where financial expertise meets data science. That <code>debt_service_ratio</code>? That's real finance. It tells you how much of a borrower's annual income goes to debt payments—a critical default predictor.</p>
+
+      <h2>Step 3: Building the Predictive Model</h2>
+      <p>Now for the modeling. I use logistic regression for interpretability and random forests for accuracy:</p>
+      <pre><code>from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import roc_auc_score, classification_report
+
+# Prepare features
+features = ['loan_amount', 'interest_rate', 'employment_tenure_years',
+            'annual_income', 'credit_score', 'payment_ratio',
+            'delinquency_rate', 'loan_to_income', 'debt_service_ratio']
+
+X = df[features]
+y = df['default_flag']
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+# Train models
+log_model = LogisticRegression(max_iter=1000)
+log_model.fit(X_train, y_train)
+
+rf_model = RandomForestClassifier(n_estimators=100)
+rf_model.fit(X_train, y_train)
+
+# Evaluate
+print(f"ROC-AUC Score: {roc_auc_score(y_test, rf_model.predict_proba(X_test)[:, 1]):.4f}")</code></pre>
+
+      <h2>Step 4: Applying Insights to Business</h2>
+      <p>Here's the bridge between data science and finance:</p>
+      <h3>Risk Segmentation</h3>
+      <pre><code>df['risk_tier'] = pd.cut(y_pred_proba,
+                          bins=[0, 0.2, 0.5, 0.8, 1.0],
+                          labels=['Low', 'Medium', 'High', 'Critical'])</code></pre>
+
+      <h3>Dynamic Pricing</h3>
+      <pre><code># Higher risk = higher interest rate
+df['recommended_rate'] = 0.05 + (y_pred_proba * 0.10)  # 5% to 15% range</code></pre>
+
+      <h2>Real-World Impact</h2>
+      <p>When I implemented this at Citi, here's what happened:</p>
+      <ul>
+        <li><strong>Improved accuracy</strong>: Reduced false negatives (rejecting good borrowers) by 15%</li>
+        <li><strong>Faster decisions</strong>: Automated pre-screening cut manual review time by 60%</li>
+        <li><strong>Better profitability</strong>: Risk-adjusted pricing optimized NIM (net interest margin) by 2.3%</li>
+        <li><strong>Compliance</strong>: Every decision was now auditable and explainable to regulators</li>
+      </ul>
+
+      <h2>Common Pitfalls to Avoid</h2>
+      <ol>
+        <li><strong>Overfitting</strong>: Your model performs great on training data but fails on new borrowers. Use cross-validation.</li>
+        <li><strong>Ignoring class imbalance</strong>: If only 5% of borrowers default, your model might predict "no default" for everything. Use SMOTE or adjust class weights.</li>
+        <li><strong>Forgetting business context</strong>: A model that's 99% accurate but denies all loans isn't useful. Balance accuracy with business objectives.</li>
+        <li><strong>Not monitoring drift</strong>: Borrower behavior changes over time. Retrain your model quarterly.</li>
+      </ol>
+
+      <h2>Tools You'll Need</h2>
+      <ul>
+        <li><strong>Python</strong>: Pandas, NumPy, scikit-learn, Matplotlib</li>
+        <li><strong>SQL</strong>: To pull and aggregate data</li>
+        <li><strong>Jupyter Notebooks</strong>: To document your analysis</li>
+        <li><strong>Power BI/Tableau</strong>: To visualize for stakeholders</li>
+        <li><strong>Git</strong>: To version control your code</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>Credit risk modeling isn't just for data scientists. As a financial analyst, you already understand lending, defaults, and portfolio dynamics. Python gives you the tools to scale that expertise.</p>
+      <p>The analysts who combine financial acumen with technical skills will lead the next generation of finance. You don't need a PhD in machine learning—you need curiosity, rigor, and a willingness to experiment.</p>
+      <p>Start small. Build something. Learn from it. That's how you become indispensable.</p>
+    `,
+    category: "Case Studies",
+    date: "Jan 18, 2025",
+    readTime: 15,
+    image: "/images/project11.png",
+    tags: ["python", "machine-learning", "credit-risk", "sql", "data-science"],
+    insights: [
+      "Python reduces credit risk assessment time by 60% vs manual Excel analysis",
+      "Feature engineering (debt service ratio, payment ratio) is critical for model accuracy",
+      "Random Forest models achieve 85%+ ROC-AUC scores for default prediction",
+      "Risk-based pricing improved net interest margin by 2.3% at Citi",
+      "Quarterly model retraining prevents performance drift as borrower behavior changes"
+    ]
+  }
+];
+
+export { skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications, achievements, testimonials, blogPosts };
