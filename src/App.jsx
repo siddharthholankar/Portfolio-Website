@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Blog from "./components/Blog";
 import BlogPost from "./components/BlogPost";
+import ProfileSelector from "./components/ProfileSelector";
 import {
   skills,
   projects,
@@ -13,28 +15,59 @@ import {
   certifications,
   achievements,
   blogPosts,
+  profiles,
 } from "./utils/data";
 
 function AppContent() {
   const location = useLocation();
   const isBlogPage = location.pathname.startsWith('/blog');
+  const [selectedProfile, setSelectedProfile] = useState(null);
+
+  useEffect(() => {
+    // Load selected profile from localStorage
+    const savedProfile = localStorage.getItem('selectedProfile');
+    if (savedProfile) {
+      setSelectedProfile(savedProfile);
+    }
+  }, []);
+
+  const handleSelectProfile = (profileId) => {
+    setSelectedProfile(profileId);
+    localStorage.setItem('selectedProfile', profileId);
+  };
+
+  const handleSwitchProfile = () => {
+    setSelectedProfile(null);
+    localStorage.removeItem('selectedProfile');
+  };
+
+  // Show profile selector if no profile is selected and not on blog page
+  if (!selectedProfile && !isBlogPage) {
+    return <ProfileSelector profiles={profiles} onSelectProfile={handleSelectProfile} />;
+  }
+
+  // Filter content based on selected profile
+  const filteredProjects = selectedProfile 
+    ? projects.filter(project => project.profiles?.includes(selectedProfile))
+    : projects;
 
   return (
     <>
-      {!isBlogPage && <Navbar />}
+      {!isBlogPage && <Navbar selectedProfile={selectedProfile} onSwitchProfile={handleSwitchProfile} onSelectProfile={handleSelectProfile} profiles={profiles} />}
       <Routes>
         <Route
           path="/"
           element={
             <Home
               skills={skills}
-              projects={projects}
+              projects={filteredProjects}
               visibleSkills={visibleSkills}
               hiddenSkills={hiddenSkills}
               experiences={experiences}
               education={education}
               certifications={certifications}
               achievements={achievements}
+              selectedProfile={selectedProfile}
             />
           }
         />

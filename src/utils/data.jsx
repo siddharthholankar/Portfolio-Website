@@ -23,7 +23,8 @@ const projects = [
     liveLink: "",
     githubLink: "",
     impact: "Reduced risk assessment time by 40%",
-    category: "Dashboard"
+    category: "Dashboard",
+    profiles: ["financial-analyst", "business-analyst"]
   },
   {
     id: 2,
@@ -35,7 +36,8 @@ const projects = [
     liveLink: "",
     githubLink: "",
     impact: "Improved gross margins by 15%",
-    category: "Finance"
+    category: "Finance",
+    profiles: ["financial-analyst", "business-analyst"]
   },
   {
     id: 3,
@@ -47,7 +49,8 @@ const projects = [
     liveLink: "",
     githubLink: "",
     impact: "Increased forecast accuracy by 35%",
-    category: "ML"
+    category: "ML",
+    profiles: ["business-analyst", "product-manager"]
   },
   {
     id: 4,
@@ -58,7 +61,8 @@ const projects = [
     liveLink: "https://colab.research.google.com/drive/1GsTKjBwPdbmzRGQMU8diSBTkXX3vE8jI?usp=sharing",
     githubLink: "",
     impact: "Reduced reporting time by 70%",
-    category: "Dashboard"
+    category: "Dashboard",
+    profiles: ["financial-analyst", "business-analyst"]
   },
   {
     id: 5,
@@ -69,7 +73,8 @@ const projects = [
     liveLink: "",
     githubLink: "",
     impact: "Automated personalized outreach with 90%+ relevance scoring",
-    category: "Automation"
+    category: "Automation",
+    profiles: ["business-analyst", "product-manager"]
   },
   {
     id: 6,
@@ -80,7 +85,8 @@ const projects = [
     liveLink: "",
     githubLink: "",
     impact: "Automated daily job discovery with structured reporting",
-    category: "Automation"
+    category: "Automation",
+    profiles: ["business-analyst", "product-manager"]
   }
 ];
 const visibleSkills = [
@@ -434,4 +440,31 @@ df['recommended_rate'] = 0.05 + (y_pred_proba * 0.10)  # 5% to 15% range</code><
   }
 ];
 
-export { skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications, achievements, testimonials, blogPosts };
+const profiles = [
+  {
+    id: "business-analyst",
+    name: "Business Analyst / Data Analyst",
+    icon: "📊",
+    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    description: "Data-driven insights and business intelligence",
+    tags: ["business-analyst", "data-analyst"]
+  },
+  {
+    id: "financial-analyst",
+    name: "Financial Analyst",
+    icon: "💰",
+    gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+    description: "Financial modeling and risk analysis",
+    tags: ["financial-analyst"]
+  },
+  {
+    id: "product-manager",
+    name: "Product Manager",
+    icon: "🚀",
+    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+    description: "Product strategy and execution",
+    tags: ["product-manager"]
+  }
+];
+
+export { skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications, achievements, testimonials, blogPosts, profiles };

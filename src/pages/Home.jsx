@@ -17,7 +17,7 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import { canvasDotsBg } from "../utils/Utils";
 
-const Home = ({ skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications, achievements }) => {
+const Home = ({ skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications, achievements, selectedProfile }) => {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
