@@ -467,4 +467,58 @@ const profiles = [
   }
 ];
 
-export { skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications, achievements, testimonials, blogPosts, profiles };
+const profileContent = {
+  "business-analyst": {
+    hero: {
+      badge: "📊 Business Analyst | Data Analyst | 4+ Years Experience",
+      typingText: "Data-Driven Decision Maker",
+      description: "Transforming raw data into strategic business insights. Specialized in <span class='text-cyan-400 font-semibold'>data analysis</span>, <span class='text-cyan-400 font-semibold'>business intelligence</span>, and <span class='text-cyan-400 font-semibold'>predictive modeling</span>.",
+      stats: [
+        { label: "📈 $2M+ Cost Savings", value: "Identified" },
+        { label: "🎯 35% Forecast Accuracy", value: "Improvement" },
+        { label: "🏆 4.0 GPA", value: "Master's Degree" }
+      ]
+    },
+    about: "Experienced Business Analyst and Data Analyst with 4+ years of expertise in transforming complex datasets into actionable business insights. Proficient in SQL, Python, Power BI, and Tableau for data visualization and analysis. Skilled in building predictive models, creating interactive dashboards, and automating reporting workflows. Proven track record of identifying cost-saving opportunities, improving forecast accuracy, and enabling data-driven decision-making across cross-functional teams.",
+    workExperience: {
+      title: "Business & Data Analytics Experience",
+      subtitle: "4+ years of driving data-backed business strategies and delivering measurable impact"
+    }
+  },
+  "financial-analyst": {
+    hero: {
+      badge: "💰 Financial Analyst | 4+ Years Experience",
+      typingText: "Data-Driven Decision Maker",
+      description: "Transforming complex financial data into actionable insights. Specialized in <span class='text-cyan-400 font-semibold'>credit risk analysis</span>, <span class='text-cyan-400 font-semibold'>forecasting</span>, and <span class='text-cyan-400 font-semibold'>portfolio optimization</span>.",
+      stats: [
+        { label: "📈 $50M+ Portfolio", value: "Analyzed" },
+        { label: "🎯 85% Accuracy", value: "Forecast" },
+        { label: "🏆 4.0 GPA", value: "Master's" }
+      ]
+    },
+    about: "Experienced Financial Analyst with 4+ years of experience driving data-backed financial strategies through in-depth modeling, forecasting, and variance analysis across fast-paced financial environments. Skilled in leveraging tools like Excel, Python, SQL, and Power BI to deliver actionable insights, optimize budgets, and support regulatory compliance. Adept at cross-functional collaboration, building financial dashboards, and presenting KPIs to support strategic planning and executive decision-making. Proven ability to align financial performance with business goals while ensuring accuracy, transparency, and stakeholder confidence.",
+    workExperience: {
+      title: "Financial Analysis Experience",
+      subtitle: "4+ years of driving financial strategies and delivering measurable business impact"
+    }
+  },
+  "product-manager": {
+    hero: {
+      badge: "🚀 Product Manager | Automation Expert | 4+ Years Experience",
+      typingText: "Product Strategy & Execution",
+      description: "Building intelligent products that solve real business problems. Specialized in <span class='text-cyan-400 font-semibold'>product strategy</span>, <span class='text-cyan-400 font-semibold'>workflow automation</span>, and <span class='text-cyan-400 font-semibold'>data-driven product decisions</span>.",
+      stats: [
+        { label: "🚀 2 Automation", value: "Products Built" },
+        { label: "🎯 90%+ Relevance", value: "AI Scoring" },
+        { label: "⚡ 70% Time Saved", value: "Automation" }
+      ]
+    },
+    about: "Product Manager with a unique blend of technical expertise and business acumen, specializing in building automation products and data-driven solutions. Experienced in end-to-end product development, from ideation to execution, with a focus on workflow automation, AI-powered tools, and business intelligence platforms. Proven track record of building products that automate manual processes, improve efficiency, and deliver measurable business value. Skilled in cross-functional collaboration, stakeholder management, and translating complex technical concepts into user-friendly products.",
+    workExperience: {
+      title: "Product & Automation Experience",
+      subtitle: "Building intelligent products that automate workflows and drive business efficiency"
+    }
+  }
+};
+
+export { skills, projects, visibleSkills, hiddenSkills, experiences, education, certifications, achievements, testimonials, blogPosts, profiles, profileContent };

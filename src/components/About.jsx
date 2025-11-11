@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { useState, useRef, useEffect } from "react";
+import { profileContent } from "../utils/data";
 
-const About = ({ skills }) => {
+const About = ({ skills, selectedProfile = "financial-analyst" }) => {
+  const content = profileContent[selectedProfile] || profileContent["financial-analyst"];
   const handleSkillClick = (e) => {
     e.currentTarget.querySelector("img").classList.remove("animate-coin-spin");
     void e.currentTarget.querySelector("img").offsetWidth;
@@ -55,7 +57,7 @@ const About = ({ skills }) => {
                 isVisible ? "animate-slide-in-left" : "opacity-0"
               } font-poppins`}
             >
-              Experienced Financial Analyst with 4+ years of experience driving data-backed financial strategies through in-depth modeling, forecasting, and variance analysis across fast-paced financial environments. Skilled in leveraging tools like Excel, Python, SQL, and Power BI to deliver actionable insights, optimize budgets, and support regulatory compliance. Adept at cross-functional collaboration, building financial dashboards, and presenting KPIs to support strategic planning and executive decision-making. Proven ability to align financial performance with business goals while ensuring accuracy, transparency, and stakeholder confidence.
+              {content.about}
             </p>
           </div>
 
@@ -107,6 +109,7 @@ About.propTypes = {
       icon: PropTypes.string.isRequired,
     })
   ).isRequired,
+  selectedProfile: PropTypes.string,
 };
 
 export default About;

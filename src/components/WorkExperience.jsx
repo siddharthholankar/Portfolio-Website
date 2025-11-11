@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useRef } from "react";
+import { profileContent } from "../utils/data";
 
-const WorkExperience = ({ experiences }) => {
+const WorkExperience = ({ experiences, selectedProfile = "financial-analyst" }) => {
+  const content = profileContent[selectedProfile] || profileContent["financial-analyst"];
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
@@ -46,11 +48,17 @@ const WorkExperience = ({ experiences }) => {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Professional <span className="bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text">Experience</span>
+            {content.workExperience.title.split(' ').map((word, i, arr) => 
+              i === arr.length - 1 ? (
+                <span key={i} className="bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text">{word}</span>
+              ) : (
+                <span key={i}>{word} </span>
+              )
+            )}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mb-6"></div>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
-            4+ years of driving financial strategies and delivering measurable business impact
+            {content.workExperience.subtitle}
           </p>
         </div>
 
@@ -241,6 +249,7 @@ WorkExperience.propTypes = {
       points: PropTypes.arrayOf(PropTypes.string).isRequired,
     })
   ).isRequired,
+  selectedProfile: PropTypes.string,
 };
 
 export default WorkExperience;

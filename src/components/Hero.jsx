@@ -1,12 +1,16 @@
 
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { profileContent } from "../utils/data";
 
-const Hero = () => {
+const Hero = ({ selectedProfile = "financial-analyst" }) => {
   const [typedText, setTypedText] = useState("");
   const [particleKey, setParticleKey] = useState(0);
-  const fullText = "Data-Driven Decision Maker";
+  const content = profileContent[selectedProfile] || profileContent["financial-analyst"];
+  const fullText = content.hero.typingText;
 
   useEffect(() => {
+    setTypedText("");
     let index = 0;
     const typingInterval = setInterval(() => {
       if (index <= fullText.length) {
@@ -18,7 +22,7 @@ const Hero = () => {
     }, 100);
 
     return () => clearInterval(typingInterval);
-  }, []);
+  }, [fullText, selectedProfile]);
 
   useEffect(() => {
     // Refresh particles periodically
@@ -167,7 +171,7 @@ const Hero = () => {
             {/* Badge */}
             <div className="inline-block animate-fade-in">
               <span className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                💼 Financial Analyst | 4+ Years Experience
+                {content.hero.badge}
               </span>
             </div>
 
@@ -188,24 +192,19 @@ const Hero = () => {
             </div>
 
             {/* Description */}
-            <p className="text-gray-400 text-lg max-w-xl leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              Transforming complex financial data into actionable insights. 
-              Specialized in <span className="text-cyan-400 font-semibold">credit risk analysis</span>, 
-              <span className="text-cyan-400 font-semibold"> forecasting</span>, and 
-              <span className="text-cyan-400 font-semibold"> portfolio optimization</span>.
-            </p>
+            <p className="text-gray-400 text-lg max-w-xl leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }} dangerouslySetInnerHTML={{ __html: content.hero.description }} />
 
             {/* Key Stats Badges */}
             <div className="flex flex-wrap gap-3 justify-center md:justify-start animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              <div className="bg-gradient-to-r from-green-600/20 to-green-600/10 border border-green-500/30 text-green-400 px-4 py-2 rounded-lg text-sm font-semibold backdrop-blur-sm">
-                📈 $50M+ Portfolio
-              </div>
-              <div className="bg-gradient-to-r from-blue-600/20 to-blue-600/10 border border-blue-500/30 text-blue-400 px-4 py-2 rounded-lg text-sm font-semibold backdrop-blur-sm">
-                🎯 85% Accuracy
-              </div>
-              <div className="bg-gradient-to-r from-purple-600/20 to-purple-600/10 border border-purple-500/30 text-purple-400 px-4 py-2 rounded-lg text-sm font-semibold backdrop-blur-sm">
-                🏆 4.0 GPA
-              </div>
+              {content.hero.stats.map((stat, index) => (
+                <div key={index} className={`bg-gradient-to-r ${
+                  index === 0 ? 'from-green-600/20 to-green-600/10 border-green-500/30 text-green-400' :
+                  index === 1 ? 'from-blue-600/20 to-blue-600/10 border-blue-500/30 text-blue-400' :
+                  'from-purple-600/20 to-purple-600/10 border-purple-500/30 text-purple-400'
+                } border px-4 py-2 rounded-lg text-sm font-semibold backdrop-blur-sm`}>
+                  {stat.label}
+                </div>
+              ))}
             </div>
 
             {/* CTA Buttons */}
@@ -292,6 +291,10 @@ const Hero = () => {
       </div>
     </div>
   );
+};
+
+Hero.propTypes = {
+  selectedProfile: PropTypes.string,
 };
 
 export default Hero;

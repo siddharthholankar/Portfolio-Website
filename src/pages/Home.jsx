@@ -44,12 +44,12 @@ const Home = ({ skills, projects, visibleSkills, hiddenSkills, experiences, educ
   return (
     <div className="flex flex-col min-h-screen bg-[#0f172a]">
       <MarketStatusBar />
-      <Hero />
+      <Hero selectedProfile={selectedProfile} />
       <div className="fixed top-0 left-0 w-full h-screen pointer-events-none">
         <canvas className="canvas-2"></canvas>
       </div>
-      <About skills={skills} />
-      <WorkExperience experiences={experiences} />
+      <About skills={skills} selectedProfile={selectedProfile} />
+      <WorkExperience experiences={experiences} selectedProfile={selectedProfile} />
       <ImpactMetrics />
       <Achievements achievements={achievements} />
       <FinancialDashboard />
