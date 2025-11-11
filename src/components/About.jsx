@@ -50,13 +50,6 @@ const About = ({ skills }) => {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="flex flex-col items-center space-y-6">
-            <div className={isVisible ? "animate-slide-in-left" : "opacity-0"}>
-              <img
-                src="/images/profile.jpeg"
-                alt="Siddharth Holankar"
-                className="rounded-full w-[200px] h-[200px] md:w-[300px] md:h-[300px] hover:animate-coin-spin-image transition-transform duration-500"
-              />
-            </div>
             <p
               className={`text-gray-300 text-lg ${
                 isVisible ? "animate-slide-in-left" : "opacity-0"
