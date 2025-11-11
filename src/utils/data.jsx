@@ -59,6 +59,28 @@ const projects = [
     githubLink: "",
     impact: "Reduced reporting time by 70%",
     category: "Dashboard"
+  },
+  {
+    id: 5,
+    title: "AI-Powered Personalized Cold Email Automation",
+    description: "Built an intelligent n8n workflow that automates personalized cold email outreach for job applications. The system uses AI (Google Gemini) to analyze job postings, score relevance against resume, generate personalized cover letters, extract company domains, find email addresses via Hunter.io, and send targeted outreach emails.",
+    techStack: "n8n, Google Gemini AI, Hunter.io API, PDF Processing, Email Automation",
+    thumbnail: "images/project11.png",
+    liveLink: "",
+    githubLink: "",
+    impact: "Automated personalized outreach with 90%+ relevance scoring",
+    category: "Automation"
+  },
+  {
+    id: 6,
+    title: "Automated ATS Job Finder & Reporting System",
+    description: "Developed an automated n8n workflow that searches for job postings daily using Google Custom Search Engine API, processes and filters results based on ATS (Applicant Tracking System) criteria, saves findings to Google Sheets with metadata (date, title, company, link, snippet, search type, score), and sends formatted email reports. Includes optional Slack notifications for real-time updates.",
+    techStack: "n8n, Google Custom Search Engine API, Google Sheets API, Email Automation, Slack API",
+    thumbnail: "images/project2.webp",
+    liveLink: "",
+    githubLink: "",
+    impact: "Automated daily job discovery with structured reporting",
+    category: "Automation"
   }
 ];
 const visibleSkills = [

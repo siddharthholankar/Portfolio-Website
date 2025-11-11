@@ -7,7 +7,7 @@ const Projects = ({ projects }) => {
   const [visibleProjects, setVisibleProjects] = useState(6);
   const projectsRef = useRef([]);
 
-  const categories = ["All", "Finance", "Dashboard", "ML"];
+  const categories = ["All", "Finance", "Dashboard", "ML", "Automation"];
 
   useEffect(() => {
     if (activeFilter === "All") {
@@ -112,6 +112,7 @@ const Projects = ({ projects }) => {
                 <span className={`px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm ${
                   project.category === "Finance" ? "bg-green-500/20 text-green-400 border border-green-500/30" :
                   project.category === "Dashboard" ? "bg-blue-500/20 text-blue-400 border border-blue-500/30" :
+                  project.category === "Automation" ? "bg-orange-500/20 text-orange-400 border border-orange-500/30" :
                   "bg-purple-500/20 text-purple-400 border border-purple-500/30"
                 }`}>
                   {project.category}
