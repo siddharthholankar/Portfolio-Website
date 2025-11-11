@@ -21,15 +21,14 @@ import {
 function AppContent() {
   const location = useLocation();
   const isBlogPage = location.pathname.startsWith('/blog');
-  const [selectedProfile, setSelectedProfile] = useState(null);
-
-  useEffect(() => {
-    // Load selected profile from localStorage
-    const savedProfile = localStorage.getItem('selectedProfile');
-    if (savedProfile) {
-      setSelectedProfile(savedProfile);
+  const [selectedProfile, setSelectedProfile] = useState(() => {
+    // Initialize from localStorage synchronously to prevent flash
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('selectedProfile');
+      return saved || null;
     }
-  }, []);
+    return null;
+  });
 
   const handleSelectProfile = (profileId) => {
     setSelectedProfile(profileId);
